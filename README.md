@@ -1,8 +1,8 @@
 # 📚 Book Tracker
 
-A full-stack reading tracker built with an **ASP.NET Core Web API** and a **Next.js** frontend. Search for books using the Open Library API, add them to a personal shelf, and track your reading progress.
+A full-stack reading tracker built with an **ASP.NET Core Web API** and a **React** frontend. Search for books using the Open Library API, add them to a personal shelf, and track your reading progress.
 
-This is the third project in my CRUD learning series, focused on building more complex API calls from a Next.js frontend.
+This is the third project in my CRUD learning series, focused on building more complex API calls from a React frontend.
 
 ## Tech Stack
 
@@ -12,8 +12,9 @@ This is the third project in my CRUD learning series, focused on building more c
 - SQL Server (LocalDB for development)
 
 **Frontend**
-- Next.js (App Router) + TypeScript
-- Tailwind CSS
+- React + TypeScript (Vite)
+- React Router
+- ESLint
 
 **External API**
 - [Open Library API](https://openlibrary.org/developers/api)
@@ -33,7 +34,12 @@ This is the third project in my CRUD learning series, focused on building more c
 ```
 CRUD-app-03/
 ├── BookTracker.Api/    # ASP.NET Core Web API
-└── book-tracker/       # Next.js frontend
+└── book-tracker/       # React (Vite) frontend
+    └── src/
+        ├── api/        # Fetch functions for the backend and Open Library
+        ├── components/ # Reusable UI pieces
+        ├── pages/      # Route-level components
+        └── types/      # TypeScript types matching the API models
 ```
 
 ## Getting Started
@@ -53,10 +59,10 @@ dotnet run
 
 ### Frontend
 
-Create a `.env.local` file in `book-tracker/`:
+Create a `.env` file in `book-tracker/`:
 
 ```
-NEXT_PUBLIC_API_URL=https://localhost:<api-port>
+VITE_API_URL=https://localhost:<api-port>
 ```
 
 Then run:
@@ -67,12 +73,14 @@ npm install
 npm run dev
 ```
 
-The app runs at `http://localhost:3000`.
+The app runs at `http://localhost:5173`.
 
 ## What I'm Learning
 
-- Building a typed API client layer in Next.js
+- Client-side routing with React Router
+- Fetching data with `useEffect` and managing loading/error state
+- Building a typed API client layer in React
 - Calling third-party APIs alongside my own backend
-- URL-driven filtering, sorting, and pagination with `searchParams`
-- Optimistic updates with `useOptimistic`
+- URL-driven filtering, sorting, and pagination with `useSearchParams`
+- Optimistic UI updates
 - Surfacing ASP.NET validation errors (ProblemDetails) in forms
