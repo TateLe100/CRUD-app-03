@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
+
+.detail-page {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --text: #18181B;
+    --muted: #71717A;
+    --line: #E4E4E7;
+
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+    .detail-page {
+        --bg: #09090B;
+        --surface: #18181B;
+        --text: #FAFAFA;
+        --muted: #A1A1AA;
+        --line: #27272A;
+    }
+}
+
+.detail-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 3rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--text);
+}
+
+.back-link:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.detail-monogram {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.detail-title {
+    margin: 0;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.detail-author {
+    margin: 0.4rem 0 0;
+    color: var(--muted);
+    font-size: 1.125rem;
+}
+
+.detail-fields {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.detail-fields div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+}
+
+.detail-fields div + div {
+    border-top: 1px solid var(--line);
+}
+
+.detail-fields dt {
+    color: var(--muted);
+    font-size: 0.9375rem;
+}
+
+.detail-fields dd {
+    margin: 0;
+    font-weight: 500;
+    text-align: right;
+}
+
+.status-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.status-text {
+    margin: 0;
+    max-width: 32rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+.entries-section {
+    margin-top: 2rem;
+}
+
+.entries-section h2 {
+    font-size: 1.25rem;
+    margin: 0 0 1rem;
+}
+
+@media (max-width: 520px) {
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .detail-monogram {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
+
+.navbar {
+    --nav-bg: rgba(250, 250, 250, 0.8);
+    --nav-text: #18181B;
+    --nav-muted: #71717A;
+    --nav-line: #E4E4E7;
+    --nav-hover: #F4F4F5;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--nav-line);
+    font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        --nav-bg: rgba(9, 9, 11, 0.8);
+        --nav-text: #FAFAFA;
+        --nav-muted: #A1A1AA;
+        --nav-line: #27272A;
+        --nav-hover: #18181B;
+    }
+}
+
+.navbar-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0.875rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    color: var(--nav-text);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.navbar-link {
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    color: var(--nav-muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navbar-link:hover {
+    color: var(--nav-text);
+    background: var(--nav-hover);
+}
+
+.navbar-link.active {
+    color: var(--nav-text);
+    background: var(--nav-hover);
+}
+
+.navbar-brand:focus-visible,
+.navbar-link:focus-visible {
+    outline: 2px solid var(--nav-text);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
